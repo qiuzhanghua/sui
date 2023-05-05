@@ -1,0 +1,71 @@
+{
+  "name": "sui",
+  "version": "0.0.0",
+  "type": "module",
+  "types": "./dist/types/index.d.ts",
+  "main": "./dist/cjs/production/index.jsx",
+  "module": "./dist/esm/production/index.jsx",
+  "exports": {
+    ".": {
+      "development": {
+        "require": "./dist/cjs/development/index.jsx",
+        "import": "./dist/esm/development/index.jsx"
+      },
+      "require": "./dist/cjs/production/index.jsx",
+      "import": "./dist/esm/production/index.jsx",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=12"
+  },
+  "license": "MIT",
+  "keywords": [
+    "pridepack"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "eslint": "^8.39.0",
+    "eslint-config-lxsmnsyc": "^0.6.4",
+    "pridepack": "2.4.4",
+    "solid-js": "^1.7.4",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.4",
+    "vitest": "^0.31.0"
+  },
+  "peerDependencies": {
+    "solid-js": "^1.6"
+  },
+  "scripts": {
+    "prepublishOnly": "pridepack clean && pridepack build",
+    "build": "pridepack build",
+    "type-check": "pridepack check",
+    "lint": "pridepack lint --fix --files **/*.ts*",
+    "clean": "pridepack clean",
+    "watch": "pridepack watch",
+    "start": "pridepack start",
+    "dev": "pridepack dev",
+    "test": "vitest"
+  },
+  "private": true,
+  "description": "solid-ui",
+  "repository": {
+    "url": "https://github.com/qiuzhanghua/sui.git",
+    "type": "git"
+  },
+  "homepage": "",
+  "bugs": {
+    "url": ""
+  },
+  "author": "qiuzhanghua@icloud.com",
+  "publishConfig": {
+    "access": "public"
+  },
+  "typesVersions": {
+    "*": {}
+  }
+}

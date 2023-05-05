@@ -1,0 +1,13 @@
+import type { JSX } from "solid-js";
+
+export interface HelloProps {
+  greeting: string;
+}
+
+export default function Hello({ greeting }: HelloProps): JSX.Element {
+  if (process.env.NODE_ENV !== "production") {
+    // eslint-disable-next-line no-console
+    console.log("This code would not appear on production builds");
+  }
+  return <h1>{`Hello ${greeting}`}</h1>;
+}
